@@ -12,11 +12,52 @@
             max-height: 400px;
             margin-top: 10;
         }
+
+        .toggle-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px 0;
+        }
+
+        .toggle-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .content-section {
+            transition: all 0.3s ease;
+        }
+
+        .hidden {
+            display: none;
+        }
     </style>
+    <script>
+        function toggleContent() {
+            const content = document.getElementById('toggleable-content');
+            const button = document.getElementById('toggle-button');
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                button.textContent = 'Hide Content';
+            } else {
+                content.classList.add('hidden');
+                button.textContent = 'Show Content';
+            }
+        }
+    </script>
 </header>
 
 <body>
     <h2>Deep-Link: navigate to COB-R9</h2>
+    
+    <button id="toggle-button" class="toggle-btn" onclick="toggleContent()">Hide Content</button>
+    
+    <div id="toggleable-content" class="content-section">
     <p><a
             href="oneappuat://linkaccess/salegallery?call_from=TEP&category=loan&sub_category=loan.personal&sg_product_id=S11002&channel_code=TEP&origin=tep&params=cGFyc2VfZnJvbT1TYWxlX0dhbGxlcnkmc3RhZmZfaWQ9NTgyMjgmY2FtcGFpZ25fY29kZT00NDc4Mw==">Loan
             Cash card</a>:<br>
@@ -74,6 +115,17 @@
         oneappuat://linkaccess/salegallery?call_from=TEP&category=loan&sub_category=loan.home&sg_product_id=S13001&channel_code=TEP&origin=tep&#38;params=cGFyc2VfZnJvbT1TYWxlX0dhbGxlcnkmc3RhZmZfaWQ9NTgyMjgmY2FtcGFpZ25fY29kZT00NDIxMg==
     </div>
     </p>
+
+
+    <p><a
+            href="oneappuat://linkaccess/salegallery?call_from=TEP&category=loan&sub_category=loan.home&sg_product_id=S13001&channel_code=TEP&origin=tep&params=cGFyc2VfZnJvbT1TYWxlX0dhbGxlcnkmc3RhZmZfaWQ9MjQzNjgmY2FtcGFpZ25fY29kZT1CQl8yMTIlJnRlcF9yZWZfaWQ9">Home
+            Loan - ISSUE</a>:<br>
+        <img src="img/home_loan_issue.png" alt="Home Loan - ISSUE">
+    <div>
+        oneappuat://linkaccess/salegallery?call_from=TEP&category=loan&sub_category=loan.home&sg_product_id=S13001&channel_code=TEP&origin=tep&params=cGFyc2VfZnJvbT1TYWxlX0dhbGxlcnkmc3RhZmZfaWQ9MjQzNjgmY2FtcGFpZ25fY29kZT1CQl8yMTIlJnRlcF9yZWZfaWQ9
+    </div>
+    </p>
+
 
 
     <h2>Deep-Link: Unavailable product details-R5</h2>
@@ -186,6 +238,24 @@
             Loan</a>
         : <small>oneappuat://linkaccess/salegallery?call_from=personalize&category=loan&sub_category=loan.sme</small>
     </p>
+    </div>
+    
+    <h2>Deep link COB Mock Entity In OneApp</h2>
+    <p><a href="oneappuat://linkaccess/common-apply/intro">Common Apply Intro</a>
+        : <small>oneappvit://linkaccess/common-apply/intro</small>
+    </p>
+    <p><a href="oneappuat://linkaccess/common-apply/intro?is_require_pin=true">Common Apply Intro (PIN Required)</a>
+        : <small>oneappvit://linkaccess/common-apply/intro?is_require_pin=true</small>
+    </p>
+
+    <h2>Mock Entity In Module</h2>
+    <p><a href="oneappuat://linkaccess/common-apply/entity">Common Apply Entity</a>
+        : <small>oneappvit://linkaccess/common-apply/entity</small>
+    </p>
+    <p><a href="oneappuat://linkaccess/common-apply/entity?is_require_pin=true">Common Apply Entity (PIN Required)</a>
+        : <small>oneappvit://linkaccess/common-apply/entity?is_require_pin=true</small>
+    </p>
+    <h2>Deeplinks:</h2>
     <p><a
             href="oneappuat://linkaccess/salegallery?call_from=personalize&category=insurance&sub_category=insurance.life_and_health">Life
             & Health Insurance</a>
